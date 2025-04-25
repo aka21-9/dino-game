@@ -299,6 +299,12 @@ document.onkeydown = function(e){
   if(e.key === ' ' && game.state === 'init') {
     start();
 }
+document.addEventListener("touchstart", function(e) {
+  if (!dino.isJumping) {
+    dino.vy = -20;
+    dino.isJumping = true;
+  }
+});
   // 　もしスペースキーが押された時、恐竜がジャンプしていない状態だったらジャンプさせていいよ
   // e.key === ' 'スペースキーを押したかどうか
   // game.dino.moveY === 0　恐竜が地面にいるかどうか
